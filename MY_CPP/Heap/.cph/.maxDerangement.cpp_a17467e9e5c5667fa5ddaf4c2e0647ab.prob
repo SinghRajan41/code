@@ -1,0 +1,1 @@
+{"name":"Local: maxDerangement","url":"c:\\Users\\Acer\\Documents\\CODES\\MY_CPP\\Heap\\maxDerangement.cpp","tests":[{"id":1659103493598,"input":"6 2\n198 76 544 123 154 675","output":"a"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Documents\\CODES\\MY_CPP\\Heap\\maxDerangement.cpp","group":"local","local":true}
