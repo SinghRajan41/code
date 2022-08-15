@@ -1,0 +1,1 @@
+{"name":"Local: graph17","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\graph17.cpp","tests":[{"id":1660562972549,"input":"9 11\n0 1 \n1 2 \n1 3 \n1 4 \n2 5 \n3 6 \n4 7 \n5 6 \n5 8\n6 8\n7 8\n1 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\graph17.cpp","group":"local","local":true}
