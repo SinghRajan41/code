@@ -1,46 +1,67 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#define isLower(x) (x >= 97 && x <= 122)
 using namespace std;
-int a[200001], t, n, k;
 int main()
 {
-   int t;
-   cin >> t;
-   while (t--)
+   string str;
+   cin >> str; // Key Word String
+   for (int i = 0; i < str.length(); i++)
    {
-      int n, k;
-      cin >> n >> k;
-      char arr[n];
-      for (int i = 0; i < n; i++)
+      if (isLower(str[i]))
       {
-         cin >> arr[i];
+         str[i] -= 32;
       }
-      for (int i = 0; i <= 2 * n; ++i)
+   }
+   int *freq = new int[26];
+   for (int i = 0; i < 26; i++)
+   {
+      freq[i] = 0;
+   }
+   for (int i = 0; i < str.length(); i++)
+   {
+      freq[(str[i] - 'A')]++;
+   }
+   string newStr = "";
+   for (int i = 0; i < str.length(); i++)
+   {
+      if (freq[(str[i] - 'A')] != -1)
       {
-         arr[i] = '0';
+         newStr += str[i];
+         freq[(str[i] - 'A')] = -1;
       }
-      int t = 0;
-      int i = 1;
-      while (i <= n - k + 1)
+   }
+   str = newStr;
+   vector<pair<int, int>> map(26, make_pair(0, 0));
+   for (int i = 0; i < 26; i++)
+   {
+      freq[i] = -1;
+   }
+   for (int i = 0; i < str.length(); i++)
+   {
+      map[i] = make_pair(65 + i, int(str[i]));
+      freq[str[i] - 'A']++;
+   }
+   int j = 0;
+   for (int i = str.length(); i < 26; i++)
+   {
+      while (freq[j] != -1)
       {
-         if ((arr[i] + t) % 2 == 1)
-         {
-            t++;
-            a[i + k - 1] = 1;
-         }
-         t -= a[i];
-         arr[i] = 48;
-         i++;
+         j++;
       }
-      for (int i = n - k + 2; i <= n; ++i)
-      {
-         arr[i] = 48 + (arr[i] + t) % 2;
-         t -= a[i];
-      }
-      for (int i = 0; i < n; i++)
-      {
-         cout << arr[i];
-      }
-      cout << endl;
+      map[i] = make_pair(65 + i, 65 + j);
+      j++;
+   }
+   string dec;
+   getline(cin >> ws, dec);
+   for (int i = 0; i < 26; i++)
+   {
+      freq[map[i].second - 65] = i;
+   }
+   for (int i = 0; i < dec.length(); i++)
+   {
+      cout << char(freq[dec[i] - 65] + 65);
    }
    return 0;
 }

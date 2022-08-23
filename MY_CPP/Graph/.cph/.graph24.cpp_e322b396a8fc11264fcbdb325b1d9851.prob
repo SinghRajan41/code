@@ -1,0 +1,1 @@
+{"name":"Local: graph24","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\graph24.cpp","tests":[{"id":1661110656665,"input":"3 4\n1 0 1 2\n0 2 2 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\graph24.cpp","group":"local","local":true}

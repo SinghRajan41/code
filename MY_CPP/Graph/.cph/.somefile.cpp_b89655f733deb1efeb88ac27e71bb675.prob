@@ -1,0 +1,1 @@
+{"name":"Local: somefile","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\somefile.cpp","tests":[{"id":1661079213356,"input":"3\n4 4\n1 2 3 4\n5 4\n4 2 1 1 1\n4 4\n4 4 4 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\somefile.cpp","group":"local","local":true}
