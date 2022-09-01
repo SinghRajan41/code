@@ -1,9 +1,14 @@
 import java.lang.*;
+import java.lang.Integer;
+import java.lang.Double;
 
 class test {
    public static void main(String arg[]) {
-      double a = 23.234d;
-      int num = (int) a;
-      System.out.print(a == num ? true : false);
+      StringBuffer sb = new StringBuffer();
+      for (int i = 65; i < 91; i++) {
+         sb.append((char) i);
+      }
+      sb.insert(4, "rajan");
+      System.out.println(sb);
    }
 }

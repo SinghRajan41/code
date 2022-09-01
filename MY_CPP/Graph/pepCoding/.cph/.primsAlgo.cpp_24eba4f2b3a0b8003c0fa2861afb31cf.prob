@@ -1,0 +1,1 @@
+{"name":"Local: primsAlgo","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\pepCoding\\primsAlgo.cpp","tests":[{"id":1661794543793,"input":"3 3\n1 2 100\n2 3 50\n1 3 20","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\pepCoding\\primsAlgo.cpp","group":"local","local":true}

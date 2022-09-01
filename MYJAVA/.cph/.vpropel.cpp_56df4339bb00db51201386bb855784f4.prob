@@ -1,0 +1,1 @@
+{"name":"Local: vpropel","url":"c:\\Users\\Acer\\Desktop\\code\\MYJAVA\\vpropel.cpp","tests":[{"id":1662013520929,"input":"7\n0 1 2 3 4 5 6\n6","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MYJAVA\\vpropel.cpp","group":"local","local":true}
