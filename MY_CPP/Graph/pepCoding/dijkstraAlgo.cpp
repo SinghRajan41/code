@@ -1,27 +1,42 @@
 #include <iostream>
 #include <vector>
-#include <queue>
 using namespace std;
+class graph
+{
+   int v, e;
+   vector<vector<int>> g;
+
+public:
+   void inputGraph()
+   {
+      cin >> v >> e;
+      for (int i = 0; i <= v; i++)
+      {
+         vector<int> temp(v + 1, -1);
+         g.push_back(temp);
+      }
+      for (int i = 0; i < e; i++)
+      {
+         int x, y, w;
+         cin >> x >> y >> w;
+         g[x][y] = g[y][x] = w;
+      }
+   }
+   void dijkstra(int src);
+};
 class priorityQueue
 {
 public:
    pair<int, int> *harr;
-   int n, size;
-
+   int size, n;
    priorityQueue()
    {
-      n = -1;
-      size = 500;
+      size = 2500;
       harr = new pair<int, int>[size];
+      n = -1;
    }
    void insert(pair<int, int> value)
    {
-
-      if (n == size - 1)
-      {
-         cout << "\nPriority Queue is full";
-         return;
-      }
       harr[++n] = value;
       int i = n;
       while (i > 0)
@@ -33,18 +48,22 @@ public:
          i = (i - 1) / 2;
       }
    }
+   int length()
+   {
+      return n + 1;
+   }
    bool empty()
    {
       return n == -1 ? true : false;
    }
    pair<int, int> peekRoot()
    {
-      return (n == -1 ? harr[0] : harr[n]);
+      return n == -1 ? harr[0] : harr[n];
    }
    void pushDown(int i)
    {
       int j = 2 * i + 1;
-      if (j + 1 <= n && harr[j + 1].second < harr[j].second)
+      if (j + 1 <= n && harr[j].second > harr[j + 1].second)
       {
          j++;
       }
@@ -67,33 +86,49 @@ public:
       else
       {
          swap(harr[0], harr[n]);
-         n -= 1;
+         n--;
          pushDown(0);
       }
    }
 };
-
 int main()
 {
-   /*priorityQueue pq;
-   for (int i = 1; i <= 10; i++)
-   {
-      pq.insert(make_pair(100, i));
-   }
-   for (int i = 0; i < 10; i++)
-   {
-      cout << pq.peekRoot().second << " ";
-      pq.deleteRoot();
-   }*/
-   priority_queue<pair<int, int>> pq;
-   for (int i = 1; i <= 10; i++)
-   {
-      pq.push(make_pair(i, 100));
-   }
-   for (int i = 1; i < 11; i++)
-   {
-      cout << pq.top().first << " ";
-      pq.pop();
-   }
+   graph g;
+   g.inputGraph();
+   g.dijkstra(0);
    return 0;
+}
+void graph::dijkstra(int src)
+{
+   priorityQueue pq;
+   pq.insert(make_pair(src, 0));
+   int dist[v];
+   for (int i = 0; i < v; i++)
+   {
+      dist[i] = INT32_MAX;
+   }
+   dist[src] = 0;
+   while (!pq.empty())
+   {
+      pair<int, int> curNode = pq.peekRoot();
+      pq.deleteRoot();
+      int node = curNode.first;
+      int wsf = curNode.second;
+      for (int i = 0; i < v; i++)
+      {
+         if (g[node][i] != -1)
+         {
+            if (wsf + g[node][i] < dist[i])
+            {
+               dist[i] = wsf + g[node][i];
+               pq.insert(make_pair(i, dist[i]));
+            }
+         }
+      }
+   }
+   cout << endl;
+   for (int i = 0; i < v; i++)
+   {
+      cout << i << " -> " << dist[i] << endl;
+   }
 }

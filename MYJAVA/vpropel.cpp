@@ -34,7 +34,7 @@ void solve(int arr[], int n, int k)
    int x, y, z;
    x = linearSearch(A, k, aSize);
    y = linearSearch(B, k, bSize);
-   z = linearSearch(C, k, n);
+   z = linearSearch(B, k, bSize);
    if (x == -1 && y == -1)
    {
       cout << x << endl;
