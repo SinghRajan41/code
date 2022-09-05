@@ -1,168 +1,45 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-void customSort(int arr[], int n);
-void printArray(int arr[], int n);
 int main()
 {
-   int n;
-   cin >> n;
-   int arr[n];
-   for (int i = 0; i < n; i++)
+   int t;
+   cin >> t;
+   while (t--)
    {
-      cin >> arr[i];
-   }
-   customSort(arr, n);
-   printarray(arr, n);
-   return 0;
-}
-void printArray(int arr[], int n)
-{
-   for (int i = 0; i < n; i++)
-   {
-      cout << arr[i] << " ";
-   }
-}
-void customSort(int arr[], int n)
-{
-   // Sorting even position elements in ascending order
-   for (int i = 3; i < n; i += 2)
-   {
-      int j = i;
-      int key = arr[j];
-      while (j > 1 && key < arr[j - 2])
+      int n, m, x;
+      cin >> n >> m >> x;
+      priority_queue<int> pq;
+      stack<int> s;
+      int pos[10000];
+      for (int i = 0; i < 10000; i++)
       {
-         arr[j] = arr[j - 2];
-         j -= 2;
+         pos[i] = 0;
       }
-      if (i != j)
+      for (int i = 0; i < n; i++)
       {
-         arr[j] = key;
+         int temp;
+         cin >> temp;
+         pq.push(temp);
+         pos[temp] = i + 1;
       }
-   }
-   // Sorting odd position elements in descending order
-   for (int i = 2; i < n; i += 2)
-   {
-      int j = i;
-      int key = arr[i];
-      while (j > 0 && key > arr[j - 2])
+      while ((!pq.empty() && pq.top() >= m) || s.size() < x)
       {
-         arr[j] = arr[j - 2];
-         j -= 2;
+         s.push(pq.top());
+         pq.pop();
       }
-      if (i != j)
+      cout << s.size() << " ";
+      priority_queue<int, vector<int>, greater<int>> res;
+      while (!s.empty())
       {
-         arr[j] = key;
+         res.push(pos[s.top()]);
+         s.pop();
       }
-   }
-}
-#include <iostream>
-using namespace std;
-void determineSortedness(int arr[], int n)
-{
-   int maxstep = (n * (n - 1)) / 2;
-   int steps = 0;
-   for (int i = 1; i < n; i++)
-   {
-      int key = arr[i];
-      int j = i;
-      while (j > 0 && key < arr[j - 1])
+      while (!res.empty())
       {
-         arr[j] = arr[j - 1];
-         j--;
-         steps++;
+         cout << res.top() << " ";
+         res.pop();
       }
-      if (i != j)
-      {
-         arr[j] = key;
-      }
+      cout << endl;
    }
-   float sortPercent = 100.0 - 100.0 * (1.0 * steps) / (1.0 * maxstep);
-   if (sortPercent == 100.0)
-   {
-      cout << "Fully sorted";
-   }
-   else if (sortPercent >= 75 && sortPercent < 100)
-   {
-      cout << "Almost sorted";
-   }
-   else
-   {
-      cout << "Not Sorted";
-   }
-}
-void printArray(int arr[], int n)
-{
-   for (int i = 0; i < n; i++)
-   {
-      cout << arr[i] << " ";
-   }
-}
-int main()
-{
-   int n;
-   cin >> n;
-   int arr[n];
-   for (int i = 0; i < n; i++)
-   {
-      cin >> arr[i];
-   }
-   detSort(arr, n);
-   return 0;
-}
-#include <iostream>
-using namespace std;
-void specialSort(int arr[], int n)
-{
-   if (arr[0] > arr[1])
-   {
-      swap(arr[0], arr[1]);
-   }
-   for (int i = 2; i < n; i++)
-   {
-      int key = arr[i];
-      if (key <= arr[0])
-      {
-         for (int j = i - 1; j > -1; j--)
-         {
-            arr[j + 1] = arr[j];
-         }
-         arr[0] = key;
-      }
-      else
-      {
-
-         for (int j = 0; j < i; j++)
-         {
-            if (key > arr[j] && key < arr[j + 1])
-            {
-               for (int z = i - 1; z >= j; z--)
-               {
-                  arr[z + 1] = arr[z];
-               }
-               arr[j + 1] = key;
-               break;
-            }
-         }
-      }
-   }
-}
-void printarray(int arr[], int n)
-{
-   for (int i = 0; i < n; i++)
-   {
-      cout << arr[i] << " ";
-   }
-}
-int main()
-{
-   int n;
-   cin >> n;
-   int arr[n];
-   for (int i = 0; i < n; i++)
-   {
-      cin >> arr[i];
-   }
-   specialSort(arr, n);
-   printarray(arr, n);
    return 0;
 }
