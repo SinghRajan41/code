@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\pepCoding\\test.py","tests":[{"id":1662959364438,"input":"3 120 51\n2 2\n5 7\n2 9","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\Graph\\pepCoding\\test.py","group":"local","local":true}
