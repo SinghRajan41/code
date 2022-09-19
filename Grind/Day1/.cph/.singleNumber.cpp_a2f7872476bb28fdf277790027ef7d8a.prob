@@ -1,0 +1,1 @@
+{"name":"Local: singleNumber","url":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day1\\singleNumber.cpp","tests":[{"id":1663517222596,"input":"7 \n1 1 1 2 2 2 2234","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day1\\singleNumber.cpp","group":"local","local":true}

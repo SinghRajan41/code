@@ -15,7 +15,7 @@ int main()
          {
             if ((m % a) % b == (m % b) % a)
             {
-               cout << a << " " << b << endl;
+               cout << a << " " << b << "\t\t";
                count += 1;
             }
          }
