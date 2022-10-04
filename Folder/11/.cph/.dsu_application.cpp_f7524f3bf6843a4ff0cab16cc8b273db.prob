@@ -1,0 +1,1 @@
+{"name":"Local: dsu_application","url":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\dsu_application.cpp","tests":[{"id":1664856689315,"input":"4 6\n3 1 2\n1 1 3\n1 2 4\n2 3 4\n1 1 2\n3 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\dsu_application.cpp","group":"local","local":true}

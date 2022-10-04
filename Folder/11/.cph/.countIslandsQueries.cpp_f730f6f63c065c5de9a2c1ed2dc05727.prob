@@ -1,0 +1,1 @@
+{"name":"Local: countIslandsQueries","url":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\countIslandsQueries.cpp","tests":[{"id":1664865254952,"input":"5 9\n0 3\n1 2\n0 2\n1 4\n2 3\n1 3\n3 1\n4 4\n2 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\countIslandsQueries.cpp","group":"local","local":true}

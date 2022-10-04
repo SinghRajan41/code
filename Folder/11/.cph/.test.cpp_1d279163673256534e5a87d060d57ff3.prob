@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\test.cpp","tests":[{"id":1664736388170,"input":"3\n3[a]2[bc]\n3[a2[c]]\n2[abc]3[cd]ef","output":"aaabcbc\naccaccacc\nabcabccdcdcdef"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\test.cpp","group":"local","local":true}
