@@ -1,1 +1,0 @@
-{"name":"Local: disjointSetUnion","url":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\disjointSetUnion.cpp","tests":[{"id":1664720444784,"input":"5\n1 2\n2 3\n1 5\n1 6\n5 6","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Folder\\11\\disjointSetUnion.cpp","group":"local","local":true}

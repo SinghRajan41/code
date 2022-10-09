@@ -1,0 +1,1 @@
+{"name":"Local: 3_climbStairsVariableJump","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\dp\\3_climbStairsVariableJump.cpp","tests":[{"id":1665056151078,"input":"13\n1 2 3 4 4 3 2 1 4 2 0 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\dp\\3_climbStairsVariableJump.cpp","group":"local","local":true}

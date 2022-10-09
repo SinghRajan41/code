@@ -1,1 +1,0 @@
-{"name":"Local: alienDictionary","url":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day5\\alienDictionary.cpp","tests":[{"id":1663868907883,"input":"5\nbaa\nabcd\nabca\ncab\ncad","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day5\\alienDictionary.cpp","group":"local","local":true}

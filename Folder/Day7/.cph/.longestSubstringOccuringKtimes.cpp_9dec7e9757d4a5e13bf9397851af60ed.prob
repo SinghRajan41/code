@@ -1,1 +1,0 @@
-{"name":"Local: longestSubstringOccuringKtimes","url":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day7\\longestSubstringOccuringKtimes.cpp","tests":[{"id":1664012513103,"input":"aabababbba\n3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day7\\longestSubstringOccuringKtimes.cpp","group":"local","local":true}

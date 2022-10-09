@@ -1,1 +1,0 @@
-{"name":"Local: countSubstrings","url":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day7\\countSubstrings.cpp","tests":[{"id":1664090247299,"input":"aaa\n2\na\naa\n","output":"2\n0\n1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Grind\\Day7\\countSubstrings.cpp","group":"local","local":true}

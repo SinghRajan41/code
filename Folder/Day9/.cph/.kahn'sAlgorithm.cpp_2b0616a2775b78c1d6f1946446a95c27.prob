@@ -1,1 +1,0 @@
-{"name":"Local: kahn'sAlgorithm","url":"c:\\Users\\Acer\\Desktop\\code\\Folder\\Day9\\kahn'sAlgorithm.cpp","tests":[{"id":1664293082756,"input":"6 6\n0 1\n2 1\n2 3\n3 4\n4 5\n0 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\Folder\\Day9\\kahn'sAlgorithm.cpp","group":"local","local":true}
