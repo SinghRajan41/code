@@ -1,0 +1,1 @@
+{"name":"Local: maxSegTree","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\dp\\maxSegTree.cpp","tests":[{"id":1665813120137,"input":"7\n2 5 3 9 1 23 43\n2 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\dp\\maxSegTree.cpp","group":"local","local":true}

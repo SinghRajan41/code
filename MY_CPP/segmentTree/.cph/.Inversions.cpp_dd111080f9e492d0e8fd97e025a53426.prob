@@ -1,0 +1,1 @@
+{"name":"Local: Inversions","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\Inversions.cpp","tests":[{"id":1666696645072,"input":"8\n8 7 6 5 4 3 2 1 \n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\Inversions.cpp","group":"local","local":true}

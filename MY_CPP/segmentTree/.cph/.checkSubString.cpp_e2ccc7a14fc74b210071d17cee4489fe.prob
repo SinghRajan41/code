@@ -1,0 +1,1 @@
+{"name":"Local: checkSubString","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\checkSubString.cpp","tests":[{"id":1666198039906,"input":"banana\n3\nnana\nlol\njar","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\checkSubString.cpp","group":"local","local":true}

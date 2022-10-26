@@ -1,0 +1,1 @@
+{"name":"Local: largestCommonSubstring","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\suffixArray\\largestCommonSubstring.cpp","tests":[{"id":1666411233049,"input":"qrdq\nrqqqrdqrqd","output":"qrdq"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\suffixArray\\largestCommonSubstring.cpp","group":"local","local":true}

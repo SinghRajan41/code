@@ -1,0 +1,1 @@
+{"name":"Local: maxSumSegment","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\suffixArray\\maxSumSegment.cpp","tests":[{"id":1666451368323,"input":"4 2\n-2 -1 -5 -4\n1 3\n3 2","output":"8\n11\n7\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\suffixArray\\maxSumSegment.cpp","group":"local","local":true}

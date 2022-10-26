@@ -1,83 +1,86 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-struct item
+int solve(int arr[], int n, int k)
 {
-   int cost;
-   string path;
-};
-class cmp
-{
-public:
-   bool operator()(item a, item b)
+   int z, o;
+   z = o = 0;
+   for (int i = 0; i < n; i++)
    {
-      return a.cost > b.cost;
+      if (arr[i] == 1)
+         o++;
+      else
+         z++;
    }
-};
-/*int subsetCount(int arr[], int n, int sum)
-{
-   int t[n + 1][sum + 1];
-   for (int i = 1; i < sum + 1; i++)
-      t[0][i] = 0;
-
-   for (int i = 0; i < n + 1; i++)
-      t[i][0] = 1;
-
-   for (int i = 1; i < n + 1; i++)
-      for (int j = 1; j < sum + 1; j++)
-      {
-         if (arr[i - 1] <= j)
-            t[i][j] = (t[i - 1][j] + t[i - 1][j - arr[i - 1]]);
-         else
-            t[i][j] = t[i - 1][j];
-      }
-
-   return t[n][sum];
-}*/
-int isSubSet(int arr[], int n, int sum)
-{
-   // here i is no of ele and j is sum
-   int dp[n + 1][sum + 1];
-
-   for (int i = 0; i < n + 1; i++)
+   if (o)
    {
-      for (int j = 0; j < sum + 1; j++)
-      {
-         if (i == 0)
-         {
-            dp[i][j] = 1;
-         }
-         if (j == 0)
-         {
-            dp[i][j] = 0;
-         }
-      }
+      cout << "YES\n";
    }
-
-   for (int i = 1; i < n + 1; i++)
+   else
    {
-      for (int j = 0; j < sum + 1; j++)
-      {
-         if (arr[i - 1] <= j)
-         {
-            dp[i][j] = dp[i - 1][j - arr[i - 1]] + dp[i - 1][j];
-         }
-         else
-         {
-            dp[i][j] = dp[i - 1][j];
-         }
-      }
+      cout << "NO\n";
    }
-   return dp[n][sum];
 }
 int main()
 {
-   int n;
-   cin >> n;
-   int arr[n];
-   for (int i = 0; i < n; i++)
-      cin >> arr[i];
-   int k;
-   cin >> k;
-   cout << isSubSet(arr, n, k);
+   int t;
+   cin >> t;
+   while (t--)
+   {
+      int n, q;
+      cin >> n >> q;
+      int arr[n];
+      long long int evenSum, oddSum;
+      evenSum = oddSum = 0;
+      int odd, even;
+      odd = even = 0;
+      for (int i = 0; i < n; i++)
+      {
+         cin >> arr[i];
+         if (arr[i] & 1)
+         {
+            oddSum += arr[i];
+            odd++;
+         }
+         else
+         {
+            evenSum += arr[i];
+            even++;
+         }
+      }
+      for (int i = 0; i < q; i++)
+      {
+         int type, x;
+         cin >> type >> x;
+         if (type == 0)
+         {
+            // All even numbers
+            if (x % 2 == 0)
+            {
+               evenSum += (even * x);
+            }
+            else
+            {
+               oddSum += (even * x + evenSum);
+               odd += even;
+               evenSum = even = 0;
+            }
+         }
+         else
+         {
+            // All odd numbers
+            if (x % 2 == 0)
+            {
+               oddSum += (odd * x);
+            }
+            else
+            {
+               evenSum += (odd * x + oddSum);
+               even += odd;
+               oddSum = odd = 0;
+            }
+         }
+         cout << evenSum + oddSum << endl;
+      }
+   }
    return 0;
 }

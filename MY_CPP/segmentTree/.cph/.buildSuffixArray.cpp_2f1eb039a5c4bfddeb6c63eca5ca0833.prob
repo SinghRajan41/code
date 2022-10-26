@@ -1,0 +1,1 @@
+{"name":"Local: buildSuffixArray","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\buildSuffixArray.cpp","tests":[{"id":1666188999498,"input":"banana","output":"9 5 8 4 7 3 6 2 1 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\buildSuffixArray.cpp","group":"local","local":true}

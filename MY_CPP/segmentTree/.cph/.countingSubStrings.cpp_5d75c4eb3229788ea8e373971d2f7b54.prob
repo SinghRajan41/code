@@ -1,0 +1,1 @@
+{"name":"Local: countingSubStrings","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\countingSubStrings.cpp","tests":[{"id":1666266799834,"input":"abababaas\n1\nab","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\segmentTree\\countingSubStrings.cpp","group":"local","local":true}

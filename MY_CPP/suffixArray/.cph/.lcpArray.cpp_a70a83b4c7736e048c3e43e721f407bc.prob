@@ -1,0 +1,1 @@
+{"name":"Local: lcpArray","url":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\suffixArray\\lcpArray.cpp","tests":[{"id":1666285686600,"input":"ababba","output":"6 5 0 2 4 1 3 \n0 1 2 0 2 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Acer\\Desktop\\code\\MY_CPP\\suffixArray\\lcpArray.cpp","group":"local","local":true}
