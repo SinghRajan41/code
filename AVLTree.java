@@ -222,6 +222,7 @@ class AVLTree
     public static node mainroot;
     public static void main(String arg[])
     {
+        System.out.println("Hello World");
         mainroot = null;
         for(int i=0;i<100;i++)
         {
