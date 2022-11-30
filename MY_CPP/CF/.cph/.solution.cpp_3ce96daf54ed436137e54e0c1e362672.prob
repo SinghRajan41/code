@@ -1,0 +1,1 @@
+{"name":"Local: solution","url":"/home/rajan41/Documents/code/MY_CPP/CF/solution.cpp","tests":[{"id":1669804355570,"input":"4\n1\n5\n32\n50","output":"YES\nYES\nNO\nYES\nYES\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Documents/code/MY_CPP/CF/solution.cpp","group":"local","local":true}
