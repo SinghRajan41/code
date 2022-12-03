@@ -1,48 +1,66 @@
 #include<iostream>
+#include<vector>
+#include<queue>
 #define ll long long int
 using namespace std;
-ll count(ll prev , ll cur , ll dest);
-void Sort(string &s);
+bool isPrime[100001];
+void init();
+void solve();
 int main()
 {
-    string s;
-    cin>>s;
-    Sort(s);
-    cout<<s;
+    init();
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
     return 0;
 }
-void Sort(string &s)
+void solve()
 {
-    int n = s.length();
-    for(int i=0;i<n;i++)
+    int n;
+    cin>>n;
+    if(n==1 || n==4 || n==2)
     {
-        if(s[i]>='a' && s[i]<='z')
+        cout<<"-1\n";
+        return;
+    }
+    else if(n%3 == 0)
+    {
+        cout<<n/3<<" 0 0\n";
+    }
+    else if(n%5 == 0)
+    {
+        cout<<"0 "<<n/5<<" 0\n";
+    }
+    else if(n%7 == 0)
+    {
+        cout<<"0 0 "<<n/7<<endl;
+    }
+    else
+    {
+        if(n%3 == 1)
         {
-            char key = s[i];
-            int idx = i;
-            for(int j=i+1;j<n;j++)
-            {
-                if(s[j]>='a' && s[j]<='z'  && s[j] < key )
-                {
-                    idx = j;
-                    key = s[j];
-                }
-            }
-            swap(s[i] , s[idx]);
+            cout<<(n-7)/3<<" 0 1\n";
         }
         else
         {
-            char key = s[i];
-            int idx = i;
-            for(int j=i+1;j<n;j++)
+            cout<<(n-5)/3<<" 1 0\n";
+        }
+    }
+}
+void init()
+{
+    for(int i=0;i<100001;i++)   isPrime[i] = true;
+    for(int i=2;i<100001;i++)
+    {
+        if(isPrime[i])
+        {
+            for(int j=2*i;j<100001;j+=i)
             {
-                if(s[j]>='A' && s[j]<='Z'  && s[j] > key )
-                {
-                    idx = j;
-                    key = s[j];
-                }
+                isPrime[j] = false;
             }
-            swap(s[i] , s[idx]);
         }
     }
 }

@@ -1,9 +1,11 @@
 #include<iostream>
 using namespace std;
-bool solve();
 #define ll long long int
 bool hasDistinct(ll x);
 ll sumOfDigits(ll x);
+bool solve(int l,int r);
+bool isPrime[100001];
+void init();
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -12,60 +14,52 @@ int main()
     cin>>t;
     while(t--)
     {
-        if(!solve())
-            cout<<"-1\n";
+        int n,q;
+        cin>>n>>q;
+        cin>>s;
+        for(int i=0;i<q;i++)
+        {
+            int l,r;
+            cin>>l>>r;
+            cout<<(solve(l,r) ? "YES\n" : "NO\n");
+        }
+        s.clear();
     }
     return 0;
 }
-ll sumOfDigits(ll x)
+
+bool solve(int l,int r)
 {
-    ll sum = 0;
-    while(x)
+    int n = s.length();
+    ll zero[s.length() + 2];
+    ll one[s.length() + 2];
+    zero[0] = one[0] = -200;
+    zero[n+1] = one[n+1] = 200;
+    for(int i=n-1;i>=0;i--)
     {
-        sum += (x%10);
-        x/=10;
-    }
-    return sum;
-}
-bool hasDistinct(ll x)
-{
-    ll arr[10];
-    for(int i=0;i<10;i++)   arr[i] = 0;
-    while(x)
-    {
-        arr[x%10]++;
-        x/=10;
-    }
-    for(int i=0;i<10;i++)
-    {
-        if(arr[i]>=2)
-            return false;
-    }
-    return true;
-}
-bool solve()
-{
-    ll x;
-    cin>>x;
-    if(x<=9)
-    {
-        cout<<x<<"\n";
-        return true;
-    }
-    else
-    {
-        for(int i=10;i<=50000000;i++)
+        if(s[i] == '0')
         {
-            ll sum = sumOfDigits(i);
-            if(sum == i)
+            zero[i+1] = i;
+            one[i+1] = one[i+2];
+        }
+        else
+        {
+            one[i] = i;
+            zero[i] = zero[i+1];
+        }
+    }
+}
+void init()
+{
+    for(int i=0;i<100001;i++)   isPrime[i] = true;
+    for(int i=2;i<100001;i++)
+    {
+        if(isPrime[i])
+        {
+            for(int j=2*i;j<100001;j+=i)
             {
-                if(hasDistinct(i))
-                {
-                    cout<<i<<"\n";
-                    return true;
-                }
+                isPrime[j] = false;
             }
         }
     }
-    return false;
 }
