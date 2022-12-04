@@ -2,12 +2,13 @@
 #include<vector>
 #include<queue>
 #include<set>
-#define ll long long int
+#define ll unsigned long long int
 using namespace std;
 bool isPrime[100001];
 void init();
 bool solve();
-ll count(ll n);
+ll binExp(ll a,ll b);
+ll binExpM(ll a,ll b,ll M);
 int main()
 {
     /*int t;
@@ -16,21 +17,44 @@ int main()
     {
         cout<<(solve()? "1\n" : "2\n");
     }*/
-    ll n;
-    cin>>n;
-    cout<<count(n);
+    ll a,b;
+    cin>>a>>b;
+    cout<<binExpM(a,b,100);
     return 0;
 }
-ll count(ll n)
+ll binExpM(ll a,ll b,ll M)
 {
-    if(n<=0)
-        return 0;
-    else if(n==1)
-        return 1;
-    else if(n==2)
-        return 2;
+    if(b==0)
+        return a;
     else
-        return (n-1)*count(n-2) + count(n-1);
+    {
+        ll res = 1;
+        while(b)
+        {
+            if(b&1)
+                res = ((res%M) * (a%M))%M;
+            a = (a*a)%M;
+            b>>=1;
+        }
+        return res;
+    }
+}
+ll binExp(ll a,ll b)
+{
+    if(b == 0)
+        return 1;
+    else
+    {
+        ll res = 1;
+        while(b)
+        {
+            if(b & 1)
+                res *= a;
+            a *= a;
+            b>>=1;
+        }
+        return res;
+    }
 }
 bool solve()
 {
