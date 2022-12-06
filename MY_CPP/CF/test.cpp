@@ -4,57 +4,72 @@
 #include<set>
 #define ll long long int
 using namespace std;
-bool isPrime[100001];
+bool seive[100001];
 void init();
+bool isPrime(ll n);
 bool solve();
-ll count(ll n);
 int main()
 {
-    /*int t;
+    int t;
     cin>>t;
     while(t--)
     {
-        cout<<(solve()? "1\n" : "2\n");
-    }*/
-    ll n;
-    cin>>n;
-    cout<<count(n);
+        cout<<(!solve() ? "NOT FOUND\n" : "");
+    }
     return 0;
 }
-ll count(ll n)
+bool isPrime(ll n)
 {
-    if(n<=0)
-        return 0;
-    else if(n==1)
-        return 1;
-    else if(n==2)
-        return 2;
+    if((!(n&1)) && n!=2)
+        return false;
     else
-        return (n-1)*count(n-2) + count(n-1);
+    {
+        for(int i=3;i*i<=n;i+=2)
+            if(n%i==0)  return false;
+    }
+    return true;
 }
 bool solve()
 {
-    int n;
+    ll n;
     cin>>n;
-    string s;
-    cin>>s;
-    for(int i=0;i<n;i+=2)
+    for(ll i=1;i*i <= n;i++)
     {
-        if((s[i] - '0')&1)
-            return true;
+        if(n%i == 0)
+        {
+            ll a = n/i;
+            ll b = a + 1;
+            a = a&b;
+            if(a == 0)
+            {
+                cout<<i<<"\n";
+                return true;
+            }
+            if(i != 1)
+            {
+                a = i;
+                b = i+1;
+                a = a&b;
+                if(a == 0)
+                {
+                    cout<<n/i<<"\n";
+                    return true;
+                }
+            }
+        }
     }
     return false;
 }
 void init()
 {
-    for(int i=0;i<100001;i++)   isPrime[i] = true;
+    for(int i=0;i<100001;i++)   seive[i] = true;
     for(int i=2;i<100001;i++)
     {
-        if(isPrime[i])
+        if(seive[i])
         {
             for(int j=2*i;j<100001;j+=i)
             {
-                isPrime[j] = false;
+                seive[j] = false;
             }
         }
     }

@@ -11,15 +11,7 @@ ll binExp(ll a,ll b);
 ll binExpM(ll a,ll b,ll M);
 int main()
 {
-    /*int t;
-    cin>>t;
-    while(t--)
-    {
-        cout<<(solve()? "1\n" : "2\n");
-    }*/
-    ll a,b;
-    cin>>a>>b;
-    cout<<binExpM(a,b,100);
+    cout<<binExp(11,12)%12;
     return 0;
 }
 ll binExpM(ll a,ll b,ll M)
