@@ -1,0 +1,1 @@
+{"name":"Local: printAllPathsMinJump","url":"/home/rajan41/Documents/code/MY_CPP/dp/printAllPathsMinJump.cpp","tests":[{"id":1670647817205,"input":"10\n3\n3\n0\n2\n1\n2\n4\n2\n0\n0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Documents/code/MY_CPP/dp/printAllPathsMinJump.cpp","group":"local","local":true}

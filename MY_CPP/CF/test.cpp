@@ -2,21 +2,82 @@
 #include<vector>
 #include<queue>
 #include<set>
+#include<map>
 #define ll long long int
+#define nl cout<<"\n"
 using namespace std;
 bool seive[100001];
 void init();
 bool isPrime(ll n);
-bool solve();
+int  solve();
+int gcd(int a,int b);
 int main()
 {
     int t;
     cin>>t;
     while(t--)
     {
-        cout<<(!solve() ? "NOT FOUND\n" : "");
+        solve();
     }
     return 0;
+}
+int solve()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    map<int,int> m;
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+        m[arr[i]]++;
+    }
+
+
+    for(int i=0;i<n;i++)
+    {
+        if(m[arr[i]]&1 && m[arr[i]] == 1)
+        {
+                cout<<"-1\n";
+                return 0;
+        }
+    }
+    int low,high;
+    low = high = 0;
+    while(high < n)
+    {
+        while(high<n && arr[high] == arr[low])
+            high++;
+        if(!((high-low)&1))
+        {
+            //even
+            for(int i=high-1;i>=low;i--)
+            {
+                cout<<i+1<<" ";
+            }
+        }
+        else
+        {
+            //odd
+            cout<<high<<" ";
+            for(int i=low;i<high-1;i++)
+            {
+                cout<<i+1<<" ";
+            }
+        }
+        low = high;
+    }
+    nl;
+    return 0;
+}
+int gcd(int a,int b)
+{
+    if(a == 0)
+        return b;
+    else
+    {
+        return gcd(b%a , a);
+    }
 }
 bool isPrime(ll n)
 {
@@ -29,37 +90,7 @@ bool isPrime(ll n)
     }
     return true;
 }
-bool solve()
-{
-    ll n;
-    cin>>n;
-    for(ll i=1;i*i <= n;i++)
-    {
-        if(n%i == 0)
-        {
-            ll a = n/i;
-            ll b = a + 1;
-            a = a&b;
-            if(a == 0)
-            {
-                cout<<i<<"\n";
-                return true;
-            }
-            if(i != 1)
-            {
-                a = i;
-                b = i+1;
-                a = a&b;
-                if(a == 0)
-                {
-                    cout<<n/i<<"\n";
-                    return true;
-                }
-            }
-        }
-    }
-    return false;
-}
+
 void init()
 {
     for(int i=0;i<100001;i++)   seive[i] = true;
@@ -74,3 +105,5 @@ void init()
         }
     }
 }
+
+
