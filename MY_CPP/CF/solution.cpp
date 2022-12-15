@@ -1,9 +1,18 @@
 #include<iostream>
+#include<vector>
+#include<queue>
+#include<set>
+#define ll unsigned long long int
+#define nl cout<<"\n"
 using namespace std;
+bool *seive;
+int *sp;
+void init_seive();
+void init_sp();
 bool solve();
-#define ll long long int
-bool hasDistinct(ll x);
-ll sumOfDigits(ll x);
+ll binExp(ll a,ll b);
+ll binExpM(ll a,ll b,ll M);
+void printVector(vector<int> arr);
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -12,55 +21,88 @@ int main()
     cin>>t;
     while(t--)
     {
-        if(!solve())
-            cout<<"-1\n";
+        solve();
     }
-    return 0;
-}
-ll revNum(ll num)
-{
-    ll rev = 0;
-    while(num)
-    {
-        rev = rev*10 + num%10;
-        num /= 10;
-    }
-    return rev;
+    return  0;
 }
 bool solve()
 {
-    ll x;
-    cin>>x;
-    if(x<=9)
+ 
+}
+void printVector(vector<int> arr)
+{
+    for(auto i:arr)
+        cout<<i<<" ";
+    nl;
+}
+void init_sp()
+{
+    //Lookup table for smallest prime
+    sp = new int[10000001];
+    int M = 10000001;
+    for(int i=0;i<M;i++)
+        sp[i] = -1;
+    sp[1] = 1;
+    for(int i=2;i<M;i+=2)
+        sp[i] = 2;
+    for(int i=3;i<M;i++)
     {
-        cout<<x<<"\n";
-        return true;
+        if(sp[i] == -1)
+        {
+            sp[i] = i;
+            for(int j=2*i;j<M;j+=i)
+                if(sp[j] == -1)
+                    sp[j] = i;
+        }
     }
-    else if(x>45)
-    {
-        return false;
-    }
+}
+ll binExpM(ll a,ll b,ll M)
+{
+    if(b==0)
+        return a;
     else
     {
-        ll digit = 9;
-        ll res = 0;
-        while(x > 0)
+        ll res = 1;
+        while(b)
         {
-            if(digit <= x)
-            {
-                res = res*10 + digit;
-                x -= digit;
-                digit--;
-            }
-            else
-            {
-                res = res*10 + x;
-                x = 0;
-            }
+            if(b&1)
+                res = ((res%M) * (a%M))%M;
+            a = (a*a)%M;
+            b>>=1;
         }
-        cout<<revNum(res)<<"\n";
-        return true;
+        return res;
+    }
+}
+ll binExp(ll a,ll b)
+{
+    if(b == 0)
+        return 1;
+    else
+    {
+        ll res = 1;
+        while(b)
+        {
+            if(b & 1)
+                res *= a;
+            a *= a;
+            b>>=1;
+        }
+        return res;
     }
 }
 
-
+void init_seive()
+{
+    seive = new bool[10000001];
+    for(int i=0;i<100001;i++)   seive[i] = true;
+    for(int i=2;i<100001;i++)
+    {
+        if(seive[i])
+        {
+            for(int j=2*i;j<100001;j+=i)
+            {
+                seive[j] = false;
+            }
+        }
+    }
+}

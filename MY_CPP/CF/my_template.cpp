@@ -3,16 +3,61 @@
 #include<queue>
 #include<set>
 #define ll unsigned long long int
+#define nl cout<<"\n"
 using namespace std;
-bool isPrime[100001];
-void init();
+bool *seive;
+int *sp;
+void init_seive();
+void init_sp();
 bool solve();
 ll binExp(ll a,ll b);
 ll binExpM(ll a,ll b,ll M);
 int main()
 {
-    cout<<binExp(11,12)%12;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
     return 0;
+}
+bool solve()
+{
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    for(int i=0;i<n;i+=2)
+    {
+        if((s[i] - '0')&1)
+            return true;
+    }
+    return false;
+}
+void init_sp()
+{
+    //Lookup table for smallest prime
+    sp = new int[10000001];
+    int M = 10000001;
+    for(int i=0;i<M;i++)
+        sp[i] = -1;
+    sp[1] = 1;
+    for(int i=2;i<M;i+=2)
+        sp[i] = 2;
+    for(int i=3;i<M;i++)
+    {
+        if(sp[i] == -1)
+        {
+            sp[i] = i;
+            for(int j=2*i;j<M;j+=i)
+                if(sp[j] == -1)
+                    sp[j] = i;
+        }
+    }
 }
 ll binExpM(ll a,ll b,ll M)
 {
@@ -48,29 +93,18 @@ ll binExp(ll a,ll b)
         return res;
     }
 }
-bool solve()
+
+void init_seive()
 {
-    int n;
-    cin>>n;
-    string s;
-    cin>>s;
-    for(int i=0;i<n;i+=2)
-    {
-        if((s[i] - '0')&1)
-            return true;
-    }
-    return false;
-}
-void init()
-{
-    for(int i=0;i<100001;i++)   isPrime[i] = true;
+    seive = new bool[10000001];
+    for(int i=0;i<100001;i++)   seive[i] = true;
     for(int i=2;i<100001;i++)
     {
-        if(isPrime[i])
+        if(seive[i])
         {
             for(int j=2*i;j<100001;j+=i)
             {
-                isPrime[j] = false;
+                seive[j] = false;
             }
         }
     }
