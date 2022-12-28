@@ -10,7 +10,7 @@ class AVLTree
 {
     static node LLRotation(node a)
     {
-            node b,d;
+            node b, d;
             b = a.left;
             d = b.right;
             b.right = a;
