@@ -1,0 +1,1 @@
+{"name":"Local: Spanning_Tree","url":"/home/rajan41/Desktop/code/MY_CPP/CF/Spanning_Tree.cpp","tests":[{"id":1672481473437,"input":"4 4\n1 2 1\n2 3 2\n3 4 2\n4 1 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/code/MY_CPP/CF/Spanning_Tree.cpp","group":"local","local":true}
