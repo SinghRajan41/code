@@ -9,14 +9,14 @@
 #define ll long long int
 #define nl cout<<"\n"
 using namespace std;
-/*bool seive[10000001];
+bool seive[10000001];
 int sp[10000001];
 vector<int> factorize(int n) ;
 void init();                // Initialises seive
 void initsp();             // Initialises smallest prime array
 int find(int n);
 ll  solve();
-int gcd(int a,int b);*/
+int gcd(int a,int b);
 bool cmp(int a,int b)
 {
     return a>b;
@@ -36,88 +36,22 @@ int main()
 }
 ll solve()
 {
-    int n,m;
-    cin>>n>>m;
-    int a[n],b[m];
-    for(int i=0;i<n;i++)    cin>>a[i];
-    for(int i=0;i<m;i++)    cin>>b[i];
-    if(n==1)
-    {    
-        cout<<b[0]<<"\n";return 0;
-    }
-    ll sum = 0;
-    sort(a,a+n,cmp);
-    sort(b,b+m,cmp);
-    if(m==n)
+    int n;
+    cin>>n;
+    bool mark[n+1];     for(int i=0;i<=n;i++)   mark[i] = false;
+    int a = 1;
+    cout<<"2\n";
+    for(int i=1;i<=n;i++)
     {
-
-        int count = n-1;
-        int i=0,j=1;
-        sum += b[0];
-        while(i<n && j<n && count)
+        if(!mark[i])
         {
-            if(a[i] > b[j])
-                sum += a[i++];
-            else
-                sum += b[j++];
-            count--;
-        }
-        while(j<n && count)
-            {sum += b[j++];count--;}
-        while(i<n && count--)
-            {sum += a[i++];count--;}
-    }
-    else if(m>n)
-    {
-        sum += b[0];
-        int i=0;
-        int j = 1;
-        int count = n-1;
-        while(j<m && i<n && count)
-        {
-            if(a[i] > b[j])
-                sum += a[i++];
-            else    
-                sum += b[j++];
-                count--;
-        }
-        while(j<m && count)
-        {
-            sum += b[j++];
-            count--;
-        }
-        while(i<n && count)
-        {
-            count--;
-            sum += a[i++];
+            for(int j=i;j<=n;j*=2)
+            {
+                if(!mark[j])    {   cout<<j<<" ";   mark[j] = true; }
+            }
         }
     }
-    else
-    {
-        //sum += b[0];
-        int i = 0;
-        int j = 0;
-        int count = n;
-        while(j<m && i<n && count)
-        {
-            if(a[i] > b[j])
-                sum += a[i++];
-            else    
-                sum += b[j++];
-                count--;
-        }
-        while(j<m && count)
-        {
-            sum += b[j++];
-            count--;
-        }
-        while(i<n && count)
-        {
-            count--;
-            sum += a[i++];
-        }
-    }   
-    cout<<sum<<"\n";
+    cout<<"\n";
     return 1;
 }
 void initsp()
@@ -186,3 +120,21 @@ void init()
 
 
 
+// #include <bits/stdc++.h>
+
+// using namespace std;
+
+// int main() {
+//   ios::sync_with_stdio(false); cin.tie(0);
+//   int t;
+//   cin >> t;
+//   while (t--) {
+//     int n;
+//     cin >> n;
+//     cout << 2 << '\n';
+//     for (int i = 1; i <= n; ++i) if (i % 2 != 0)
+//       for (int j = i; j <= n; j *= 2)
+//         cout << j << ' ';
+//     cout << '\n';
+//   }
+// } 
