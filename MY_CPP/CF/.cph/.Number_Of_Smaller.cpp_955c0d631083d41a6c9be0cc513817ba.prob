@@ -1,0 +1,1 @@
+{"name":"Local: Number_Of_Smaller","url":"/home/rajan41/Desktop/code/MY_CPP/CF/Number_Of_Smaller.cpp","tests":[{"id":1672984214618,"input":"6 7\n1 6 9 13 18 18\n2 3 8 13 15 21 25\n","output":"1 1 2 3 4 6 6 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/code/MY_CPP/CF/Number_Of_Smaller.cpp","group":"local","local":true}

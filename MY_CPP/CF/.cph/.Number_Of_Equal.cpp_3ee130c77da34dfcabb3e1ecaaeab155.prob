@@ -1,0 +1,1 @@
+{"name":"Local: Number_Of_Equal","url":"/home/rajan41/Desktop/code/MY_CPP/CF/Number_Of_Equal.cpp","tests":[{"id":1672985011273,"input":"8 7\n1 1 3 3 3 5 8 8\n1 3 3 4 5 5 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/code/MY_CPP/CF/Number_Of_Equal.cpp","group":"local","local":true}

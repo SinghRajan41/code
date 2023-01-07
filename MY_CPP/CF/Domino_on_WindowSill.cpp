@@ -3,7 +3,7 @@
 #include<queue>
 #include<set>
 #include<map>
-#include<string>
+#include<map>
 #include<algorithm>
 #include<unordered_map>
 #define ll long long int
@@ -35,39 +35,18 @@ int main()
 
     return 0;
 }
-int makeNum(char x,char y)
-{
-    string s = "";
-    s+=x;
-    s+=y;
-    return stoi(s);
-}
 ll solve()
 {
-    int a,b,c,d;
-    cin>>a>>b>>c>>d;
-    int s = a+b+c+d;
-    if(s == 0)
+    int n,k1,k2;    cin>>n>>k1>>k2; int b,w;    cin>>w>>b;
+    if((k1+k2 >= 2*w) && (2*n-k1-k2 >= 2*b))
     {
-        cout<<"0\n";
+        cout<<"YES\n";
     }
-    else if(s==1)
+    else
     {
-        cout<<"1\n";
+        cout<<"NO\n";
     }
-    else if(s == 2)
-    {
-        cout<<"1\n";
-    }
-    else if(s == 3)
-    {
-        cout<<"1\n";
-    }
-    else if(s == 4)
-    {
-        cout<<"2\n";
-    }
-    return 0;
+    return 1;
 }
 void initsp()
 {
@@ -132,3 +111,5 @@ void init()
         }
     }
 }
+
+

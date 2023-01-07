@@ -3,6 +3,7 @@
 #include<queue>
 #include<set>
 #include<map>
+#include<map>
 #include<string>
 #include<algorithm>
 #include<unordered_map>
@@ -12,8 +13,8 @@ using namespace std;
 bool seive[10000001];
 int sp[10000001];
 vector<int> factorize(int n) ;
-void init();                // Initialises seive
-void initsp();             // Initialises smallest prime array
+void init();               
+void initsp();            
 int find(int n);
 ll  solve();
 int gcd(int a,int b);
@@ -30,7 +31,7 @@ int main()
     cin>>t;
     while(t--)
     {
-        solve();
+        cout<<(solve()  ? "res\n" : "cyan\n");
     }
 
     return 0;
@@ -44,28 +45,38 @@ int makeNum(char x,char y)
 }
 ll solve()
 {
-    int a,b,c,d;
-    cin>>a>>b>>c>>d;
-    int s = a+b+c+d;
-    if(s == 0)
+    string s;   cin>>s;
+    int sum = 0;
+    for(int i=0;i<s.length();i++)
+        sum += (s[i]-'0');
+    if(sum%3 != 0)
+        return 0;
+    bool zero = false;
+    for(int i=0;i<s.length();i++)
     {
-        cout<<"0\n";
+        if(s[i] == '0')
+        {
+            zero = true;
+            break;
+        }
     }
-    else if(s==1)
+    if(!zero)
+        return 0;
+    for(int i=0;i<s.length();i++)
     {
-        cout<<"1\n";
-    }
-    else if(s == 2)
-    {
-        cout<<"1\n";
-    }
-    else if(s == 3)
-    {
-        cout<<"1\n";
-    }
-    else if(s == 4)
-    {
-        cout<<"2\n";
+        for(int j=i+1;j<s.length();j++)
+        {
+            char x,y;
+            x = s[i];
+            y = s[j];
+            int a;
+            a = makeNum(x,y);
+            if(a%4 == 0)
+                return 1;
+            a = makeNum(y,x);
+            if(a%4 == 0)
+                return 1;
+        }
     }
     return 0;
 }

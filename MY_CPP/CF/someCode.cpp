@@ -3,6 +3,7 @@
 #include<queue>
 #include<set>
 #include<map>
+#include<map>
 #include<string>
 #include<algorithm>
 #include<unordered_map>
@@ -23,16 +24,22 @@ bool cmp(int a,int b)
 }
 int main()
 {
-    ios_base::sync_with_stdio(false);
+    /*ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int t;
     cin>>t;
     while(t--)
     {
-        solve();
+        cout<<(solve()  ? "YES\n" : "NO\n");
+    }*/
+    vector<int> arr = {3,4,8};
+    auto it = lower_bound(arr.begin() , arr.end() , 10);
+    if(it == arr.end())
+    {
+        cout<<"YES\n";
     }
-
+    cout<<(*lower_bound(arr.begin() , arr.end() , 10));
     return 0;
 }
 int makeNum(char x,char y)
@@ -44,30 +51,18 @@ int makeNum(char x,char y)
 }
 ll solve()
 {
-    int a,b,c,d;
-    cin>>a>>b>>c>>d;
-    int s = a+b+c+d;
-    if(s == 0)
+   /* int n;  cin>>n; string s;   cin>>s;
+    set<int> m,t;
+    if(n%3 != 0)
+        return 0;
+    for(int i=0;i<n;i++)
     {
-        cout<<"0\n";
+        if(s[i] == 'T') t.insert(i+1);
+        else    s.insert(i+1);
     }
-    else if(s==1)
-    {
-        cout<<"1\n";
-    }
-    else if(s == 2)
-    {
-        cout<<"1\n";
-    }
-    else if(s == 3)
-    {
-        cout<<"1\n";
-    }
-    else if(s == 4)
-    {
-        cout<<"2\n";
-    }
-    return 0;
+    if(t.size() != 2*m.size())  return 0;*/
+    return 1;
+
 }
 void initsp()
 {
@@ -132,3 +127,5 @@ void init()
         }
     }
 }
+
+
