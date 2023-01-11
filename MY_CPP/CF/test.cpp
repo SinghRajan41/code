@@ -12,8 +12,8 @@ using namespace std;
 bool seive[10000001];
 int sp[10000001];
 vector<int> factorize(int n) ;
-void init();                // Initialises seive
-void initsp();             // Initialises smallest prime array
+void init();            
+void initsp();             
 int find(int n);
 ll  solve();
 int gcd(int a,int b);
@@ -32,7 +32,6 @@ int main()
     {
         solve();
     }
-
     return 0;
 }
 int makeNum(char x,char y)
@@ -71,7 +70,6 @@ ll solve()
 }
 void initsp()
 {
-    //Lookup table for finding the smallest prime factor of a number
     int M = 10000001;
     for(int i=0;i<M;i++)
         sp[i] = -1;
@@ -107,7 +105,6 @@ int gcd(int a, int b) {
     return a << shift;
 }
 vector<int> factorize(int n) {
-    // Make sure that sp array is initialised
     vector<int> facs;
     while(n > 1)
     {
@@ -132,3 +129,7 @@ void init()
         }
     }
 }
+
+
+
+
