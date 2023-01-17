@@ -1,0 +1,1 @@
+{"name":"Local: Constructing_Prefix_Amounts","url":"/home/rajan41/Desktop/code/MY_CPP/CF/Constructing_Prefix_Amounts.cpp","tests":[{"id":1673767811576,"input":"5\n-1 -2 3 0 4\n","output":"0 -1 -3 0 0 4 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/code/MY_CPP/CF/Constructing_Prefix_Amounts.cpp","group":"local","local":true}

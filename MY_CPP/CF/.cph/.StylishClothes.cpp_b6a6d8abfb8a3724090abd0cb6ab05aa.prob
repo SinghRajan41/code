@@ -1,0 +1,1 @@
+{"name":"Local: StylishClothes","url":"/home/rajan41/Desktop/code/MY_CPP/CF/StylishClothes.cpp","tests":[{"id":1673584665396,"input":"1\n5\n4\n3 6 7 10\n4\n18 3 9 11\n1\n20","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/code/MY_CPP/CF/StylishClothes.cpp","group":"local","local":true}

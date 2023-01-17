@@ -1,0 +1,1 @@
+{"name":"Local: AB_Knapsack","url":"/home/rajan41/Desktop/code/MY_CPP/CF/AB_Knapsack.cpp","tests":[{"id":1673720431077,"input":"6 7 23 3 5\n7 4 3 1 5 8\n10 12 7 3 8 9 17","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/code/MY_CPP/CF/AB_Knapsack.cpp","group":"local","local":true}

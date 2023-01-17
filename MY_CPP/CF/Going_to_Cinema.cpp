@@ -11,7 +11,6 @@ int gcd(int a,int b);
 int main()
 {   ios_base::sync_with_stdio(false);   cin.tie(NULL);  cout.tie(NULL);
     int t = 1;
-    initsp();
     cin>>t;
     while(t--)
     {
@@ -21,18 +20,20 @@ int main()
 }
 ll solve()
 {
-    int n;  cin>>n;
-    string s;
-    cin>>s;
-    vector<int> facs = factorize(n);
-    int freq[26];
-    for(int i=0;i<26;i++)   freq[i] = 0;
-    for(int i=0;i<n;i++)    freq[s[i] - 'a']++;
-    vector<int> pos[26];
-    for(int i=0;i<n;i++)
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)    cin>>arr[i];
+    int ans = 1;
+    sort(arr,arr+n);
+    for(int i=0;i<n-1;i++)
     {
-        pos[(int)(s[i] - 'a')].push_back(i);
+        if(arr[i]<=i && arr[i+1] > i+1)
+            ans++;
     }
+    if(arr[0] != 0)
+        ans++;
+    cout<<ans<<"\n";
     return 0;
 }
 void initsp()
@@ -73,24 +74,14 @@ int gcd(int a, int b) {
 }
 vector<int> factorize(int n) {
     vector<int> facs;
-    /*while(n > 1)
+    while(n > 1)
     {
         int f = sp[n];
         n/=f;
         facs.push_back(f);
     }
-    return facs;*/
-    for(int i=1;i*i <= n;i++)
-    {
-        if(n%i == 0)
-        {
-            if(i != n/i)
-                facs.push_back(i) , facs.push_back(n/i);
-            else
-                facs.push_back(i);
-        }
-    }
     return facs;
+
 }
 void init()
 {
