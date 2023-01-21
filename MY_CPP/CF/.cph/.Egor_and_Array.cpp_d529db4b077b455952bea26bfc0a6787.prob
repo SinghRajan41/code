@@ -1,0 +1,1 @@
+{"name":"Local: Egor_and_Array","url":"/home/rajan41/Desktop/code/MY_CPP/CF/Egor_and_Array.cpp","tests":[{"id":1674192729765,"input":"4 3 6\n1 2 3 4\n1 2 1\n2 3 2\n3 4 4\n1 2\n1 3\n2 3\n1 2\n1 3\n2 3","output":"5 18 31 20"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/code/MY_CPP/CF/Egor_and_Array.cpp","group":"local","local":true}

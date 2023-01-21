@@ -11,7 +11,6 @@ int gcd(int a,int b);
 int main()
 {   ios_base::sync_with_stdio(false);   cin.tie(NULL);  cout.tie(NULL);
     int t = 1;
-    initsp();
     cin>>t;
     while(t--)
     {
@@ -21,18 +20,7 @@ int main()
 }
 ll solve()
 {
-    int n;  cin>>n;
-    string s;
-    cin>>s;
-    vector<int> facs = factorize(n);
-    int freq[26];
-    for(int i=0;i<26;i++)   freq[i] = 0;
-    for(int i=0;i<n;i++)    freq[s[i] - 'a']++;
-    vector<int> pos[26];
-    for(int i=0;i<n;i++)
-    {
-        pos[(int)(s[i] - 'a')].push_back(i);
-    }
+    
     return 0;
 }
 void initsp()
