@@ -8,20 +8,64 @@ void init();
 void initsp();             
 ll  solve();
 int gcd(int a,int b);
+ll mul(ll a,ll b);
 int main()
-{   ios_base::sync_with_stdio(false);   cin.tie(NULL);  cout.tie(NULL);
+{   
+    init();
+    ios_base::sync_with_stdio(false);   cin.tie(NULL);  cout.tie(NULL);
     int t = 1;
     cin>>t;
     while(t--)
     {
-        solve();
+        cout<<(solve())<<"\n";
     }
     return 0;
 }
+
 ll solve()
 {
-    
-    return 0;
+    int n,m,d;
+    cin>>n>>m>>d;
+    int arr[n+1];
+    for(int i=1;i<=n;i++)   cin>>arr[i];
+    int a[m];
+    for(int i=0;i<m;i++)
+        cin>>a[i];
+    int pos[n+1];
+    for(int i=1;i<=n;i++)
+        pos[arr[i]] = i;
+    for(int i=0;i<m-1;i++)
+    {
+        if(!((pos[a[i]] < pos[a[i+1]]) && (pos[a[i+1]] <= (d + pos[a[i]]))  ))
+            return 0;
+    }
+    int ans = INT32_MAX;
+    for(int i=0;i<m-1;i++)
+    {
+        int l = pos[a[i]];
+        int r = pos[a[i+1]];
+        if((l<r && (r <= (l+d))))
+        {
+            // try to push r beyond l + d 
+            if(((l+d+1) <=n))
+            {
+                int cost = l + d + 1 - r;
+                if(cost > 0)
+                {
+                    ans = min(ans , cost);
+                }
+            }
+            //try to push r before l
+            int x = r-l;
+            ans = min(x , ans);
+            if(d+2 <= n)
+            {
+                ans = min(ans , d+1-x);
+            }
+            
+        }
+    }
+    return ans;
 }
 void initsp()
 {
@@ -59,27 +103,27 @@ int gcd(int a, int b) {
     } while (b);
     return a << shift;
 }
-vector<int> factorize(int n) {
-    vector<int> facs;
-    /*while(n > 1)
+vector<int> factorize(int n)
+{
+    vector<int> f;
+    while (!(n % 2)) 
     {
-        int f = sp[n];
-        n/=f;
-        facs.push_back(f);
+        n >>= 1; 
+        f.push_back(2);
     }
-    return facs;*/
-    for(int i=1;i*i <= n;i++)
+    for (long long i = 3; i <= sqrt(n); i += 2) 
     {
-        if(n%i == 0)
+        while (n % i == 0) 
         {
-            if(i != n/i)
-                facs.push_back(i) , facs.push_back(n/i);
-            else
-                facs.push_back(i);
+            f.push_back(i);
+            n/=i;
         }
     }
-    return facs;
+    if(n>1)
+        f.push_back(n);
+    return f;
 }
+
 void init()
 {
     for(int i=0;i<100001;i++)   seive[i] = true;
