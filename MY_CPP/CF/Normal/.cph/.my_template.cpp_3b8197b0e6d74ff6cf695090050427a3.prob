@@ -1,0 +1,1 @@
+{"name":"Local: my_template","url":"/home/rajan41/Desktop/Solutions/code/MY_CPP/CF/Normal/my_template.cpp","tests":[{"id":1677766815507,"input":"3\n3\nFFB\n8\nBFFBFFBF\n3\nBBB","output":"4\n1\n5\n3\n3\n3\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/rajan41/Desktop/Solutions/code/MY_CPP/CF/Normal/my_template.cpp","group":"local","local":true}

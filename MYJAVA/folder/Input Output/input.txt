@@ -1,0 +1,6 @@
+Hello This is an input file
+This has lines
+This has paras
+This has words
+This has carriage return characters
+This has new line characters
